@@ -1,6 +1,19 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.get_tweets("wednesdays")
+    @tweets = if params[:query]
+      Tweet.get_tweets(params[:query])
+    else
+      Tweet.get_tweets("toronto")
+    end
+  end
+
+  def create
+    @tweet
+  end
+
+  private
+  def tweet_params
+    params.require(:tweet).permit(:query)
   end
 
 end

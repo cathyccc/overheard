@@ -1,7 +1,9 @@
-<%= form_tag do%>
-  <%= text_field_tag(:q) %>
+<%= form_tag(tweets_path, method: :get) do%>
+  <%= text_field_tag(:query, params[:query]) %>
   <%= submit_tag("Search") %>
 <% end %>
+
+<%=@tweet_search%>
 
 <% @tweets.each do |tweet| %>
   <p><%= tweet.text %></p>
