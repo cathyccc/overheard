@@ -7,8 +7,6 @@ Rails.application.routes.draw do
 
   resources :tweets
 
-  # resources :users, only:[:show]
-
   get 'profile', to: 'users#show'
 
   root "tweets#index"
