@@ -5,6 +5,7 @@ class Tweet < ApplicationRecord
   end
 
   def self.get_tweets(topic)
-    @@client.search("##{topic}").take(3)
+      @@client.search("##{topic}").take(3)
   end
+
 end

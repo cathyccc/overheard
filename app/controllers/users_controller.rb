@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @tweet = Tweet.get_tweets("toronto")
+    #   @tweets = @tweet.search("#toronto").take(3)
   end
 end

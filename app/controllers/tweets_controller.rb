@@ -7,10 +7,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  def create
-    @tweet
-  end
-
   private
   def tweet_params
     params.require(:tweet).permit(:query)

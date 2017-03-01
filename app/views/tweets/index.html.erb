@@ -11,8 +11,6 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<%=@tweet_search%>
-
 <% @tweets.each do |tweet| %>
   <p><%= tweet.text %></p>
 <% end %>

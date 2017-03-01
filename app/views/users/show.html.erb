@@ -1,16 +1,9 @@
 <!-- temporary user info text -->
 <p>
   <div>
-    <%= @tweet %>
-  </div>
-  <div>
     <%= current_user.email %>
   </div>
 </p>
-
-<div>
-  <%= link_to "Authorize Twitter",user_twitter_omniauth_authorize_path %>
-</div>
 
 <div>
   <%= link_to "Back", root_path %>
