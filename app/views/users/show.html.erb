@@ -29,7 +29,15 @@
 </div>
 
 <div>
-  
+  <% @tracked_terms.each do |entry| %>
+    <h4>#<%= entry.term %></h4>
+    <% tweets = Tweet.get_tweets(entry.term)%>
+    <% tweets.each do |tweet| %>
+      <p>
+        <%= tweet.text %>
+      </p>
+    <% end %>
+  <% end %>
 </div>
 
 <div>

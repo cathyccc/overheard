@@ -8,4 +8,8 @@ class Tweet < ApplicationRecord
       @@client.search("##{topic}").take(3)
   end
 
+  def self.find_tracked(current_user)
+    @tracked_terms = TrackedTerm.where(user_id: current_user)
+  end
+
 end

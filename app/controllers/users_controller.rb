@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     end
 
     @tracked_term = TrackedTerm.new
+
+    @tracked_terms = Tweet.find_tracked(current_user)
   end
 
   private
