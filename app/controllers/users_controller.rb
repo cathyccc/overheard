@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     else
       []
     end
+
+    @tracked_term = TrackedTerm.new
   end
 
   private

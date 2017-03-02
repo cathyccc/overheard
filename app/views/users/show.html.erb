@@ -20,13 +20,17 @@
   <% end %>
 </div>
 
-<!-- <div>
+<div>
   <h3>Add Term</h3>
-  <%#= form_for @tracked_term do |f| %>
-    <%#= f.text_field (:term) %>
-    <%#= f.submit ("Track Term") %>
-  <%# end %>
-</div> -->
+  <%= form_for @tracked_term do |f| %>
+    <%= f.text_field :term %>
+    <%= f.submit "Add Track Term" %>
+  <% end %>
+</div>
+
+<div>
+  
+</div>
 
 <div>
   <%= link_to "Back", root_path %>
