@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
     @tweets = if params[:query]
       Tweet.get_tweets(params[:query])
     else
-      Tweet.get_tweets("toronto")
+      Tweet.get_tweets("#toronto")
     end
   end
 

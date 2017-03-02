@@ -5,7 +5,7 @@ class Tweet < ApplicationRecord
   end
 
   def self.get_tweets(topic)
-      @@client.search("##{topic} -rt", lang:'en').take(3)
+      @@client.search("#{topic} -rt", lang:'en').take(3)
   end
 
   def self.find_tracked(current_user)
