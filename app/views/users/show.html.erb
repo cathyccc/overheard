@@ -1,9 +1,32 @@
 <!-- temporary user info text -->
 <p>
   <div>
-    <%= current_user.email %>
+    <h2><%= current_user.email %></h2>
   </div>
 </p>
+
+<div>
+  <h3>Search</h3>
+  <%= form_tag(profile_path, method: :get) do%>
+    <%= text_field_tag(:query, params[:query]) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
+<div>
+  <h4>Search Result</h4>
+  <% @tweets.each do |tweet| %>
+    <p><%= tweet.text %></p>
+  <% end %>
+</div>
+
+<!-- <div>
+  <h3>Add Term</h3>
+  <%#= form_for @tracked_term do |f| %>
+    <%#= f.text_field (:term) %>
+    <%#= f.submit ("Track Term") %>
+  <%# end %>
+</div> -->
 
 <div>
   <%= link_to "Back", root_path %>

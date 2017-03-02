@@ -1,0 +1,2 @@
+module TrackedTermsHelper
+end

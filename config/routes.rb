@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :tracked_terms, only: [:create,:destroy]
   resources :tweets
 
   get 'profile', to: 'users#show'
