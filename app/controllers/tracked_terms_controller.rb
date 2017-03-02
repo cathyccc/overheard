@@ -10,6 +10,9 @@ class TrackedTermsController < ApplicationController
   end
 
   def destroy
+    @tracked_term = TrackedTerm.find(params[:id])
+    @tracked_term.destroy
+    redirect_to profile_path
   end
 
   private

@@ -37,9 +37,13 @@
         <%= tweet.text %>
       </p>
     <% end %>
+
+    <%= link_to "Stop Tracking", tracked_term_path(entry.id), method: :delete %>
   <% end %>
 </div>
 
 <div>
-  <%= link_to "Back", root_path %>
+  <p>
+    <%= link_to "Back", root_path %>
+  </p>
 </div>
