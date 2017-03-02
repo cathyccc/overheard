@@ -5,7 +5,14 @@ class TrackedTermsController < ApplicationController
     if @tracked_term.save
       redirect_to profile_path
     else
-      render :profile
+      @tweets = if params[:query]
+        Tweet.get_tweets(params[:query])
+      else
+        []
+      end
+      @tracked_terms = Tweet.find_tracked(current_user)
+      render "users/show"
+      # flash[:notice] = "Sorry, you are only allowed to track a maximum of 3 entries."
     end
   end
 

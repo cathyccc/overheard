@@ -7,6 +7,12 @@
   <div>
     <h3>Add Term</h3>
     <%= form_for @tracked_term do |f| %>
+      <% if @tracked_term.errors.any? %>
+        <% @tracked_term.errors.full_messages.each do |msg| %>
+          <p><em><%= msg %></em></p>
+        <% end %>
+      <% end %>
+
       <%= f.text_field :term %>
       <%= f.submit "Add Track Term" %>
     <% end %>
