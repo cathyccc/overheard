@@ -1,3 +1,52 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.image-circular{
+  border-radius: 13%;
+}
+
+.tweet-user-info,
+.tweet-user-img{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tweet-username{
+  font-weight: 200;
+}
+
+.tweet-name{
+  font-weight: 500;
+}
+
+.tweet-user-info{
+  margin-left: 0.5em;
+}
+
+.tweet-result{
+  padding: 1.5em;
+  border: 1px solid #e3e1e1;
+  margin: 1em;
+  border-radius: 5px;
+}
+
+.tweet-text{
+  margin-top: 0.8em;
+  font-weight: 400;
+}
+
+.track-result{
+  margin: 2.5em 0;
+}
+
+.term{
+  font-weight: 500;
+  line-height: 1.1;
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+
+.remove-term{
+  font-size: 1em;
+  font-weight: 300;
+}
