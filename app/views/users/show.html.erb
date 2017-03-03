@@ -24,7 +24,7 @@
       <span class="remove-term"><%= link_to "(Stop Tracking)", tracked_term_path(entry.id), method: :delete %></span>
       <% tweets = Tweet.get_tweets(entry.term)%>
       <% tweets.each do |tweet| %>
-        <div class="tweet-result ">
+        <div class="tweet-result">
           <span class="tweet-user-img">
             <%= image_tag (tweet.user.profile_image_url), class: "image-circular" %>
           </span>
@@ -33,6 +33,7 @@
             <div class="tweet-username">@<%= tweet.user.screen_name %></div>
           </span>
           <div class="tweet-text"><%= tweet.text %></div>
+          <div class="tweet-time"><%= tweet.created_at.strftime("%m:%M%p - %e %b %Y") %></div>
         </div>
       <% end %>
     </div>
