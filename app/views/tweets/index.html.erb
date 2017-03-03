@@ -1,3 +1,4 @@
+<h2>overheard</h2>
 <% if !current_user %>
   <%= link_to "Sign Up", new_user_registration_path %> |
   <%= link_to "Sign In", new_user_session_path %>
@@ -12,5 +13,15 @@
 <% end %>
 
 <% @tweets.each do |tweet| %>
-  <p><%= tweet.text %></p>
+  <div class="tweet-result">
+    <span class="tweet-user-img">
+      <%= image_tag (tweet.user.profile_image_url), class: "image-circular" %>
+    </span>
+    <span class="tweet-user-info">
+      <div class="tweet-name"><%= tweet.user.name %></div>
+      <div class="tweet-username">@<%= tweet.user.screen_name %></div>
+    </span>
+    <div class="tweet-text"><%= tweet.text %></div>
+    <div class="tweet-time"><%= tweet.created_at.strftime("%m:%M%p - %e %b %Y") %></div>
+  </div>
 <% end %>
