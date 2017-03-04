@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'devise'
 gem 'twitter'
+gem 'yelp', require: 'yelp'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
