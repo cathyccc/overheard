@@ -5,8 +5,6 @@ class TweetsController < ApplicationController
     else
       []
     end
-
-    @yelp = YelpReview.get_business.businesses[0]
   end
 
   private

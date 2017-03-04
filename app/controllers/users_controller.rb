@@ -8,6 +8,12 @@ class UsersController < ApplicationController
 
     @tracked_term = TrackedTerm.new
     @tracked_terms = Tweet.find_tracked(current_user)
+
+    @yelp_businesses = if params[:q_business]
+      YelpReview.get_business(params[:q_business])
+    else
+      []
+    end
   end
 
   private

@@ -6,8 +6,8 @@ class YelpReview < ApplicationRecord
                               token_secret: Figaro.env.yelp_access_secret
                             })
 
-  def self.get_business
-    params = { term: 'uncle tetsu'}
-    @@client_yelp.search('Toronto',params)
+  def self.get_business(business_search)
+    params = { term: business_search, limit: 3}
+    @@client_yelp.search('Toronto',params).businesses
   end
 end
