@@ -3,8 +3,10 @@ class TweetsController < ApplicationController
     @tweets = if params[:query]
       Tweet.get_tweets(params[:query])
     else
-      Tweet.get_tweets("#toronto")
+      []
     end
+
+    @yelp = YelpReview.get_business.businesses[0]
   end
 
   private

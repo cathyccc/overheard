@@ -7,6 +7,16 @@
   <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 <% end %>
 
+<p>
+  <h3>Yelp Tracking</h3>
+  <%= image_tag(@yelp.image_url) %><br>
+  <%= @yelp.name %><br>
+  <% @yelp.location.display_address.map do |address| %>
+    <%= address %><br>
+  <% end %>
+
+<p>
+
 <%= form_tag(tweets_path, method: :get) do%>
   <%= text_field_tag(:query, params[:query]) %>
   <%= submit_tag("Search") %>
