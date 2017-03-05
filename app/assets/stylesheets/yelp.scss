@@ -1,0 +1,37 @@
+.yp-bresult{
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 0;
+  border: 1px solid #e3e1e1;
+  position: relative;
+  width: 85%;
+}
+
+.yp-bresult-img,
+.yp-bresult-info {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.yp-bresult-info {
+  font-size: 0.8em;
+  padding: 0 2%;
+  width: 60%;
+}
+
+.yp-bname{
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+.yelp_businesses{
+  margin: 1em;
+}
+
+.yp-blogo img{
+  width: 60px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}

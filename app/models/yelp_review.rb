@@ -7,7 +7,7 @@ class YelpReview < ApplicationRecord
                             })
 
   def self.get_business(business_search)
-    params = { term: business_search, limit: 3}
+    params = { term: business_search, limit: 4}
     @@client_yelp.search('Toronto',params).businesses
   end
 end

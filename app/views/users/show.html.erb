@@ -3,27 +3,42 @@
   <h2><%= current_user.email %></h2>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-12">
   <h3>Search Yelp</h3>
   <%= form_tag(profile_path, method: :get) do%>
     <%= text_field_tag(:q_business, params[:q_business])%>
     <%= submit_tag("Find Business") %>
   <% end %>
 
-  <div>
+  <div class="yelp_businesses clearfix">
     <% @yelp_businesses.each do |business| %>
-      <p>
-        <%= image_tag(business.image_url) %><br>
-        <%= business.name %><br>
-        <% business.location.display_address.map do |address| %>
-          <%= address %><br>
-        <% end %>
-      <p>
+      <div class="col-sm-6 col-md-6">
+        <div class="yp-bresult">
+          <%= image_tag(business.image_url, class: "yp-bresult-img")%>
+
+          <span class="yp-bresult-info">
+            <div>
+              <div class="yp-bname"><%= business.name %></div>
+              <div>
+                <%= business.location.display_address[0] %>
+              </div>
+              <div>
+                <%= business.location.display_address[2] %><br>
+                <span><%= image_tag(business.rating_img_url_small) %></span>
+                <span><%= business.review_count %> Reviews</span>
+              </div>
+              <div class="yp-blogo">
+                <%= image_tag ("Yelp_trademark.svg") %>
+              </div>
+            </div>
+          </span>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-12">
   <div>
     <h3>Search Twitter</h3>
     <%= form_tag(profile_path, method: :get) do%>
@@ -40,7 +55,7 @@
   </div>
 </div>
 
-<div class = "col-md-8">
+<div class = "col-md-12">
   <div>
     <h3>Add Term</h3>
     <%= form_for @tracked_term do |f| %>
