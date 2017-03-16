@@ -57,6 +57,16 @@
   </div>
 </div>
 
+<div class="col-md-12">
+  <div>
+    <h3>Post Tweet</h3>
+    <%= form_tag(profile_path, method: :get) do%>
+      <%= text_field_tag(:query, params[:query], name:"post-tweet") %>
+      <%= submit_tag("Tweet") %>
+    <% end %>
+  </div>
+</div>
+
 <div class = "col-md-12">
   <div>
     <h3>Add Term</h3>
