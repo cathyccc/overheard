@@ -1,7 +1,9 @@
 <!-- temporary user info text -->
-<div class = "col-md-12">
-  <h2><%= current_user.email %></h2>
-</div>
+<% if user_signed_in? %>
+  <div class = "col-md-12">
+    <h2><%= "#{current_user.email}" %></h2>
+  </div>
+<% end %>
 
 <div class="col-md-12">
   <h3>Search Yelp</h3>
