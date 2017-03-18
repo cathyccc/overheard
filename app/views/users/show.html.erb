@@ -3,6 +3,10 @@
   <h2><%= current_user.email %></h2>
 </div>
 
+<div class = "col-md-12">
+  <%= link_to "Authenticate Twitter", user_twitter_omniauth_authorize_path %>
+</div>
+
 <div class="col-md-12">
   <h3>Search Yelp</h3>
   <%= form_tag(profile_path, method: :get) do%>
