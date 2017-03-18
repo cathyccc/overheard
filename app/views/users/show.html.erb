@@ -52,12 +52,24 @@
   </div>
 
   <div>
-    <h4>Search Result</h4>
-    <% @tweets.each do |tweet| %>
-      <p><%= tweet.text %></p>
+    <% if @tweets == nil %>
+      <h4>Search Result</h4>
+      <% @tweets.each do |tweet| %>
+        <p><%= tweet.text %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+<% if @twitter_auth != nil %>
+  <div class = "col-md-12">
+    <h3>Tweet</h3>
+    <%= form_tag(method: :get) do %>
+      <%= text_field_tag(:new_tweet, params[:new_tweet]) %>
+      <%= submit_tag("Tweet") %>
+    <% end %>
+  </div>
+<% end %>
 
 <div class = "col-md-12">
   <div>

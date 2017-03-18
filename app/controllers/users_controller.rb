@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       []
     end
 
+    @twitter_auth = UserAuthentication.where(user_id: current_user.id, authentication_provider:"twitter")
     @tracked_term = TrackedTerm.new
     @tracked_terms = Tweet.find_tracked(current_user)
 
