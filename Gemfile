@@ -36,6 +36,8 @@ gem 'figaro'
 gem 'devise'
 gem 'twitter'
 gem 'yelp', require: 'yelp'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
