@@ -52,7 +52,7 @@
   </div>
 
   <div>
-    <% if @tweets == nil %>
+    <% if @tweets %>
       <h4>Search Result</h4>
       <% @tweets.each do |tweet| %>
         <p><%= tweet.text %></p>
