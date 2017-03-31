@@ -64,7 +64,7 @@
 <% if @twitter_auth != nil %>
   <div class = "col-md-12">
     <h3>Tweet</h3>
-    <%= form_tag(method: :get) do %>
+    <%= form_tag('/profile', method: :get) do %>
       <%= text_field_tag(:new_tweet, params[:new_tweet]) %>
       <%= submit_tag("Tweet") %>
     <% end %>

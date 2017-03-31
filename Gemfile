@@ -38,6 +38,7 @@ gem 'twitter'
 gem 'yelp', require: 'yelp'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

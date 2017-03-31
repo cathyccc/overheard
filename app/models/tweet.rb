@@ -12,4 +12,13 @@ class Tweet < ApplicationRecord
     @tracked_terms = TrackedTerm.where(user_id: current_user)
   end
 
+  def self.post_tweet(message,current_user)
+    @client_twitter = Twitter::REST::Client.new do |config|
+      config.consumer_key        = Figaro.env.twitter_consumer_key
+      config.consumer_secret     = Figaro.env.twitter_consumer_secret
+      config.access_token        = current_user.user_authentications.find_by(authentication_provider: "twitter").access_token
+      config.access_token_secret = current_user.user_authentications.find_by(authentication_provider: "twitter").access_secret
+    end
+    @client_twitter.update("#{message}")
+  end
 end
